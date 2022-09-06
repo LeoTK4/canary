@@ -876,6 +876,7 @@ void LuaEnums::initItemIdEnums(lua_State* L) {
 	registerEnum(L, ITEM_DIAMOND_ARROW);
 
 	registerEnum(L, ITEM_GOLD_POUCH);
+	registerEnum(L, ITEM_LOOT_POUCH);
 	registerEnum(L, ITEM_STORE_INBOX);
 
 	registerEnum(L, ITEM_DIVINE_EMPOWERMENT);
