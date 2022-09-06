@@ -16,7 +16,7 @@
 
 Container::Container(uint16_t type) :
 	Container(type, items[type].maxItems) {
-	if (getID() == ITEM_GOLD_POUCH) {
+	if (getID() == ITEM_GOLD_POUCH || getID() == ITEM_LOOT_POUCH) {
 		pagination = true;
 	}
 }

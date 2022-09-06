@@ -520,6 +520,7 @@ enum item_t : uint16_t {
 	ITEM_DOCUMENT_RO = 2834, // Read-only
 
 	ITEM_GOLD_POUCH = 23721,
+	ITEM_LOOT_POUCH = 12654,
 
 	ITEM_DEPOT_I = 22797,
 	ITEM_DEPOT_II = 22798,
