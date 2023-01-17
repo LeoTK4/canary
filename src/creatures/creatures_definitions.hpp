@@ -767,6 +767,11 @@ enum TradeState_t : uint8_t {
 	TRADE_TRANSFER,
 };
 
+enum attackHand_t : uint8_t {
+	HAND_LEFT,
+	HAND_RIGHT,
+};
+
 enum CombatType_t : uint8_t {
 	COMBAT_PHYSICALDAMAGE = 0,
 	COMBAT_ENERGYDAMAGE = 1,
