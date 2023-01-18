@@ -73,6 +73,7 @@ void Weapons::loadDefaults()
 		switch (it.weaponType) {
 			case WEAPON_AXE:
 			case WEAPON_SWORD:
+			case WEAPON_FIST:
 			case WEAPON_CLUB: {
 				WeaponMelee* weapon = new WeaponMelee(&scriptInterface);
 				weapon->configureWeapon(it);
@@ -624,6 +625,11 @@ bool WeaponMelee::getSkillType(const Player* player, const Item* item,
 
 		case WEAPON_AXE: {
 			skill = SKILL_AXE;
+			return true;
+		}
+
+		case WEAPON_FIST: {
+			skill = SKILL_FIST;
 			return true;
 		}
 

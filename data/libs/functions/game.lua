@@ -111,6 +111,8 @@ function Game.getSkillType(weaponType)
 		return SKILL_SWORD
 	elseif weaponType == WEAPON_AXE then
 		return SKILL_AXE
+	elseif weaponType == WEAPON_FIST then
+		return SKILL_FIST
 	elseif weaponType == WEAPON_DISTANCE then
 		return SKILL_DISTANCE
 	elseif weaponType == WEAPON_SHIELD then

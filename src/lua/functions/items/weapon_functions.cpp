@@ -28,6 +28,7 @@ int WeaponFunctions::luaCreateWeapon(lua_State* L) {
 	switch (type) {
 		case WEAPON_SWORD:
 		case WEAPON_AXE:
+		case WEAPON_FIST:
 		case WEAPON_CLUB: {
 			WeaponMelee* weapon = new WeaponMelee(getScriptEnv()->getScriptInterface());
 			if (weapon) {
