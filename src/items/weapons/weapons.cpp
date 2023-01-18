@@ -468,6 +468,11 @@ bool WeaponMelee::getSkillType(const Player* player, const Item* item, skills_t 
 			return true;
 		}
 
+		case WEAPON_FIST: {
+			skill = SKILL_FIST;
+			return true;
+		}
+
 		default:
 			break;
 	}

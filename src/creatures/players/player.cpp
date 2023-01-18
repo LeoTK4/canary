@@ -350,6 +350,11 @@ int32_t Player::getWeaponSkill(const Item* item) const {
 			break;
 		}
 
+		case WEAPON_FIST: {
+			attackSkill = getSkillLevel(SKILL_FIST);
+			break;
+		}
+
 		case WEAPON_MISSILE:
 		case WEAPON_DISTANCE: {
 			attackSkill = getSkillLevel(SKILL_DISTANCE);

@@ -24201,9 +24201,8 @@
 		</attribute>
 	</item>
 	<item id="10391" article="a" name="drachaku">
-		<attribute key="primarytype" value="club weapons"/>
-		<attribute key="weaponType" value="club"/>
-		<attribute key="slotType" value="two-handed"/>
+		<attribute key="weaponType" value="fist"/>
+		<!--<attribute key="slotType" value="two-handed"/>-->
 		<attribute key="attack" value="46"/>
 		<attribute key="defense" value="25"/>
 		<attribute key="weight" value="6000"/>

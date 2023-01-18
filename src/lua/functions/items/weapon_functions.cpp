@@ -23,6 +23,7 @@ int WeaponFunctions::luaCreateWeapon(lua_State* L) {
 	switch (type) {
 		case WEAPON_SWORD:
 		case WEAPON_AXE:
+		case WEAPON_FIST:
 		case WEAPON_CLUB: {
 			if (auto weaponPtr = g_luaEnvironment().createWeaponObject<WeaponMelee>(getScriptEnv()->getScriptInterface())) {
 				pushUserdata<WeaponMelee>(L, weaponPtr.get());

@@ -432,6 +432,7 @@ bool Spell::playerSpellCheck(Player* player) const {
 		switch (player->getWeaponType()) {
 			case WEAPON_SWORD:
 			case WEAPON_CLUB:
+			case WEAPON_FIST:
 			case WEAPON_AXE:
 				break;
 
