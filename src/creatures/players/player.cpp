@@ -397,14 +397,14 @@ void Player::getShieldAndWeapon(const Item*&shield, const Item*&weapon) const {
 
 	} else {
 		for (uint32_t slot = CONST_SLOT_RIGHT; slot <= CONST_SLOT_LEFT; slot++) {
-			Item *item = inventory[slot];
+			Item* item = inventory[slot];
 			if (!item) {
 				continue;
 			}
 
-		switch (item->getWeaponType()) {
-			case WEAPON_NONE:
-				break;
+			switch (item->getWeaponType()) {
+				case WEAPON_NONE:
+					break;
 
 				case WEAPON_SHIELD: {
 					if (!shield || (shield && item->getDefense() > shield->getDefense())) {
@@ -435,8 +435,7 @@ bool Player::isDualWielding() const
 	return false;
 }
 
-int32_t Player::getDefense() const
-{
+int32_t Player::getDefense() const {
 	int32_t defenseSkill = getSkillLevel(SKILL_FIST);
 	int32_t defenseValue = 7;
 	const Item* weapon;
@@ -2454,7 +2453,7 @@ void Player::removeExperience(uint64_t exp, bool sendText /* = false*/) {
 	sendExperienceTracker(0, -static_cast<int64_t>(exp));
 }
 
-uint32_t Player::getAttackSpeed() const {// Dual Wielding Test
+uint32_t Player::getAttackSpeed() const { // Dual Wielding Test
 	uint32_t ret = (vocation->getAttackSpeed() - (getSkillLevel(SKILL_FIST) * 5));
 
 	if (isDualWielding()) {
@@ -2465,8 +2464,7 @@ uint32_t Player::getAttackSpeed() const {// Dual Wielding Test
 	return ret;
 }
 
-double_t Player::getPercentLevel(uint64_t count, uint64_t nextLevelCount)
-{
+double_t Player::getPercentLevel(uint64_t count, uint64_t nextLevelCount) {
 	if (nextLevelCount == 0) {
 		return 0;
 	}
@@ -3164,9 +3162,7 @@ ReturnValue Player::queryAdd(int32_t index, const Thing &thing, uint32_t count, 
 
 		case CONST_SLOT_RIGHT: {
 			if (slotPosition & SLOTP_RIGHT) {
-				if (item->getWeaponType() != WEAPON_DISTANCE && item->getWeaponType() != WEAPON_WAND &&
-						g_configManager().getBoolean(ALLOW_DUAL_WIELDING) &&
-						vocation->canDualWield()) {
+				if (item->getWeaponType() != WEAPON_DISTANCE && item->getWeaponType() != WEAPON_WAND && g_configManager().getBoolean(ALLOW_DUAL_WIELDING) && vocation->canDualWield()) {
 					ret = RETURNVALUE_NOERROR;
 				} else if (item->getWeaponType() != WEAPON_SHIELD && !item->isQuiver()) {
 					ret = RETURNVALUE_CANNOTBEDRESSED;
@@ -3245,9 +3241,7 @@ ReturnValue Player::queryAdd(int32_t index, const Thing &thing, uint32_t count, 
 					ret = RETURNVALUE_CANONLYUSEONESHIELD;
 				} else if (rightType == WEAPON_NONE || type == WEAPON_NONE || rightType == WEAPON_SHIELD || rightType == WEAPON_AMMO || type == WEAPON_SHIELD || type == WEAPON_AMMO) {
 					ret = RETURNVALUE_NOERROR;
-				} else if (rightType == WEAPON_DISTANCE || type == WEAPON_DISTANCE || rightType == WEAPON_WAND || type == WEAPON_WAND &&
-						g_configManager().getBoolean(ALLOW_DUAL_WIELDING) &&
-						vocation->canDualWield()) {
+				} else if (rightType == WEAPON_DISTANCE || type == WEAPON_DISTANCE || rightType == WEAPON_WAND || type == WEAPON_WAND && g_configManager().getBoolean(ALLOW_DUAL_WIELDING) && vocation->canDualWield()) {
 					ret = RETURNVALUE_NOERROR;
 				} else {
 					ret = RETURNVALUE_CANONLYUSEONEWEAPON;
