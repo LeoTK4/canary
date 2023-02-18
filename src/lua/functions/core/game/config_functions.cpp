@@ -5,7 +5,7 @@
  * License: https://github.com/opentibiabr/canary/blob/main/LICENSE
  * Contributors: https://github.com/opentibiabr/canary/graphs/contributors
  * Website: https://docs.opentibiabr.org/
-*/
+ */
 
 #include "pch.hpp"
 
@@ -19,8 +19,9 @@ void ConfigFunctions::init(lua_State* L) {
 	registerMethod(L, "configManager", "getBoolean", ConfigFunctions::luaConfigManagerGetBoolean);
 	registerMethod(L, "configManager", "getFloat", ConfigFunctions::luaConfigManagerGetFloat);
 
-	#define registerEnumIn(L, tableName, value) { \
-		std::string enumName = #value; \
+#define registerEnumIn(L, tableName, value)                                                     \
+	{                                                                                           \
+		std::string enumName = #value;                                                          \
 		registerVariable(L, tableName, enumName.substr(enumName.find_last_of(':') + 1), value); \
 	}
 	registerTable(L, "configKeys");
@@ -135,51 +136,53 @@ void ConfigFunctions::init(lua_State* L) {
 	registerEnumIn(L, "configKeys", RATE_NPC_ATTACK)
 	registerEnumIn(L, "configKeys", RATE_NPC_DEFENSE)
 
-	registerEnumIn(L, "configKeys", RATE_HEALTH_REGEN)
-	registerEnumIn(L, "configKeys", RATE_HEALTH_REGEN_SPEED)
-	registerEnumIn(L, "configKeys", RATE_MANA_REGEN)
-	registerEnumIn(L, "configKeys", RATE_MANA_REGEN_SPEED)
-	registerEnumIn(L, "configKeys", RATE_SOUL_REGEN)
-	registerEnumIn(L, "configKeys", RATE_SOUL_REGEN_SPEED)
+	registerEnumIn(L, "configKeys", RATE_HEALTH_REGEN);
+	registerEnumIn(L, "configKeys", RATE_HEALTH_REGEN_SPEED);
+	registerEnumIn(L, "configKeys", RATE_MANA_REGEN);
+	registerEnumIn(L, "configKeys", RATE_MANA_REGEN_SPEED);
+	registerEnumIn(L, "configKeys", RATE_SOUL_REGEN);
+	registerEnumIn(L, "configKeys", RATE_SOUL_REGEN_SPEED);
 
-	registerEnumIn(L, "configKeys", RATE_SPELL_COOLDOWN)
-	registerEnumIn(L, "configKeys", RATE_ATTACK_SPEED)
-	registerEnumIn(L, "configKeys", RATE_OFFLINE_TRAINING_SPEED)
-	registerEnumIn(L, "configKeys", RATE_EXERCISE_TRAINING_SPEED)
+	registerEnumIn(L, "configKeys", RATE_SPELL_COOLDOWN);
+	registerEnumIn(L, "configKeys", RATE_ATTACK_SPEED);
+	registerEnumIn(L, "configKeys", RATE_OFFLINE_TRAINING_SPEED);
+	registerEnumIn(L, "configKeys", RATE_EXERCISE_TRAINING_SPEED);
 
-	registerEnumIn(L, "configKeys", STAMINA_TRAINER)
-	registerEnumIn(L, "configKeys", STAMINA_PZ)
-	registerEnumIn(L, "configKeys", STAMINA_ORANGE_DELAY)
-	registerEnumIn(L, "configKeys", STAMINA_GREEN_DELAY)
-	registerEnumIn(L, "configKeys", STAMINA_TRAINER_DELAY)
-	registerEnumIn(L, "configKeys", STAMINA_PZ_GAIN)
-	registerEnumIn(L, "configKeys", STAMINA_TRAINER_GAIN)
-	registerEnumIn(L, "configKeys", SORT_LOOT_BY_CHANCE)
-	registerEnumIn(L, "configKeys", MAX_ALLOWED_ON_A_DUMMY)
+	registerEnumIn(L, "configKeys", STAMINA_TRAINER);
+	registerEnumIn(L, "configKeys", STAMINA_PZ);
+	registerEnumIn(L, "configKeys", STAMINA_ORANGE_DELAY);
+	registerEnumIn(L, "configKeys", STAMINA_GREEN_DELAY);
+	registerEnumIn(L, "configKeys", STAMINA_TRAINER_DELAY);
+	registerEnumIn(L, "configKeys", STAMINA_PZ_GAIN);
+	registerEnumIn(L, "configKeys", STAMINA_TRAINER_GAIN);
+	registerEnumIn(L, "configKeys", SORT_LOOT_BY_CHANCE);
+	registerEnumIn(L, "configKeys", MAX_ALLOWED_ON_A_DUMMY);
 
-	registerEnumIn(L, "configKeys", PUSH_WHEN_ATTACKING)
-	registerEnumIn(L, "configKeys", TOGGLE_SAVE_INTERVAL)
-	registerEnumIn(L, "configKeys", SAVE_INTERVAL_TYPE)
-	registerEnumIn(L, "configKeys", TOGGLE_SAVE_INTERVAL_CLEAN_MAP)
-	registerEnumIn(L, "configKeys", SAVE_INTERVAL_TIME)
-	registerEnumIn(L, "configKeys", RATE_USE_STAGES)
-	registerEnumIn(L, "configKeys", TOGGLE_IMBUEMENT_SHRINE_STORAGE)
-	registerEnumIn(L, "configKeys", GLOBAL_SERVER_SAVE_TIME)
-	registerEnumIn(L, "configKeys", DATA_DIRECTORY)
-	registerEnumIn(L, "configKeys", CORE_DIRECTORY)
+	registerEnumIn(L, "configKeys", PUSH_WHEN_ATTACKING);
+	registerEnumIn(L, "configKeys", TOGGLE_SAVE_INTERVAL);
+	registerEnumIn(L, "configKeys", SAVE_INTERVAL_TYPE);
+	registerEnumIn(L, "configKeys", TOGGLE_SAVE_INTERVAL_CLEAN_MAP);
+	registerEnumIn(L, "configKeys", SAVE_INTERVAL_TIME);
+	registerEnumIn(L, "configKeys", RATE_USE_STAGES);
+	registerEnumIn(L, "configKeys", TOGGLE_IMBUEMENT_SHRINE_STORAGE);
+	registerEnumIn(L, "configKeys", GLOBAL_SERVER_SAVE_TIME);
+	registerEnumIn(L, "configKeys", DATA_DIRECTORY);
+	registerEnumIn(L, "configKeys", CORE_DIRECTORY);
 
-	registerEnumIn(L, "configKeys", FORGE_COST_ONE_SLIVER)
-	registerEnumIn(L, "configKeys", FORGE_SLIVER_AMOUNT)
-	registerEnumIn(L, "configKeys", FORGE_CORE_COST)
-	registerEnumIn(L, "configKeys", FORGE_MAX_DUST)
-	registerEnumIn(L, "configKeys", FORGE_FUSION_DUST_COST)
-	registerEnumIn(L, "configKeys", FORGE_TRANSFER_DUST_COST)
-	registerEnumIn(L, "configKeys", FORGE_BASE_SUCCESS_RATE)
-	registerEnumIn(L, "configKeys", FORGE_BONUS_SUCCESS_RATE)
-	registerEnumIn(L, "configKeys", FORGE_TIER_LOSS_REDUCTION)
-	registerEnumIn(L, "configKeys", FORGE_INFLUENCED_CREATURES_LIMIT)
-
-	#undef registerEnumIn
+	registerEnumIn(L, "configKeys", FORGE_COST_ONE_SLIVER);
+	registerEnumIn(L, "configKeys", FORGE_SLIVER_AMOUNT);
+	registerEnumIn(L, "configKeys", FORGE_CORE_COST);
+	registerEnumIn(L, "configKeys", FORGE_MAX_DUST);
+	registerEnumIn(L, "configKeys", FORGE_FUSION_DUST_COST);
+	registerEnumIn(L, "configKeys", FORGE_TRANSFER_DUST_COST);
+	registerEnumIn(L, "configKeys", FORGE_BASE_SUCCESS_RATE);
+	registerEnumIn(L, "configKeys", FORGE_BONUS_SUCCESS_RATE);
+	registerEnumIn(L, "configKeys", FORGE_TIER_LOSS_REDUCTION);
+	registerEnumIn(L, "configKeys", FORGE_INFLUENCED_CREATURES_LIMIT);
+	registerEnumIn(L, "configKeys", BOOSTED_BOSS_SLOT);
+	registerEnumIn(L, "configKeys", BOOSTED_BOSS_LOOT_BONUS);
+	registerEnumIn(L, "configKeys", BOOSTED_BOSS_KILL_BONUS);
+#undef registerEnumIn
 }
 
 int ConfigFunctions::luaConfigManagerGetString(lua_State* L) {
