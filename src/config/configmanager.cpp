@@ -209,8 +209,8 @@ bool ConfigManager::load() {
 	integer[ACTIONS_DELAY_INTERVAL] = getGlobalNumber(L, "timeBetweenActions", 200);
 	integer[EX_ACTIONS_DELAY_INTERVAL] = getGlobalNumber(L, "timeBetweenExActions", 1000);
 	integer[MAX_MESSAGEBUFFER] = getGlobalNumber(L, "maxMessageBuffer", 4);
-	integer[DUAL_WIELDING_SPEED_RATE] = getGlobalNumber(L, "dualWieldingSpeedRate", 200);	// Dual Wielding Test
-	integer[DUAL_WIELDING_DAMAGE_RATE] = getGlobalNumber(L, "dualWieldingDamageRate", 60);	// Dual Wielding Test
+	integer[DUAL_WIELDING_SPEED_RATE] = getGlobalNumber(L, "dualWieldingSpeedRate", 200); // Dual Wielding Test
+	integer[DUAL_WIELDING_DAMAGE_RATE] = getGlobalNumber(L, "dualWieldingDamageRate", 60); // Dual Wielding Test
 	integer[KICK_AFTER_MINUTES] = getGlobalNumber(L, "kickIdlePlayerAfterMinutes", 15);
 	integer[PROTECTION_LEVEL] = getGlobalNumber(L, "protectionLevel", 1);
 	integer[DEATH_LOSE_PERCENT] = getGlobalNumber(L, "deathLosePercent", -1);

@@ -3389,7 +3389,7 @@ void ProtocolGame::sendBlessStatus() {
 
 	msg.addByte(0x9C);
 
-	msg.add<uint16_t>((blessCount >= 5) ? (flag | 1) : flag);		  //Show up the glowing effect in items if have all blesses
+	msg.add<uint16_t>((blessCount >= 5) ? (flag | 1) : flag); // Show up the glowing effect in items if have all blesses
 	msg.addByte((blessCount >= 7) ? 3 : ((blessCount >= 5) ? 2 : 1)); // 1 = Disabled | 2 = normal | 3 = green
 	// msg.add<uint16_t>(0);
 

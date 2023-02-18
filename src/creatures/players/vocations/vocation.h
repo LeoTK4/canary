@@ -91,7 +91,7 @@ class Vocation {
 
 		bool canDualWield() const {
 			return dualWield;
-		}		
+		}
 
 		bool getMagicShield() const {
 			return magicShield;
