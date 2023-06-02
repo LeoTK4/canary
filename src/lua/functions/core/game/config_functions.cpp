@@ -40,9 +40,9 @@ void ConfigFunctions::init(lua_State* L) {
 	registerEnumIn(L, "configKeys", WARN_UNSAFE_SCRIPTS);
 	registerEnumIn(L, "configKeys", CONVERT_UNSAFE_SCRIPTS);
 	registerEnumIn(L, "configKeys", ALLOW_DUAL_WIELDING); // Dual Wielding
-		registerEnumIn(L, "configKeys", DUAL_WIELDING_SPEED_RATE); // Dual Wielding
-		registerEnumIn(L, "configKeys", DUAL_WIELDING_DAMAGE_RATE); // Dual Wielding
-		registerEnumIn(L, "configKeys", ALLOW_BLOCK_SPAWN);
+	registerEnumIn(L, "configKeys", DUAL_WIELDING_SPEED_RATE); // Dual Wielding
+	registerEnumIn(L, "configKeys", DUAL_WIELDING_DAMAGE_RATE); // Dual Wielding
+	registerEnumIn(L, "configKeys", ALLOW_BLOCK_SPAWN);
 	registerEnumIn(L, "configKeys", CLASSIC_ATTACK_SPEED);
 	registerEnumIn(L, "configKeys", REMOVE_WEAPON_AMMO);
 	registerEnumIn(L, "configKeys", REMOVE_WEAPON_CHARGES);
